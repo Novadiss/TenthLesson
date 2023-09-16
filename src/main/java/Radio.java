@@ -7,7 +7,7 @@ public class Radio {
     }
 
 
-    public void setCurrentVolume(int newCurrentVolume) { //установление диапазона возможной громкости
+    public void setCurrentVolume(int newCurrentVolume) { //установка громкости и ограничение диапазона возможной громкости
         if (newCurrentVolume < 0) {
             return;
         }
@@ -41,7 +41,7 @@ public class Radio {
         return currentStation;
     }
 
-    public void setCurrentStation(int newCurrentStation) { //ограничение диапазона радио-станций
+    public void setCurrentStation(int newCurrentStation) { //установка станции и ограничение диапазона радио-станций
         if (newCurrentStation < 1) {
             return;
         }
