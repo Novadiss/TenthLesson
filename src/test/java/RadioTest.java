@@ -19,10 +19,9 @@ public class RadioTest {
     public void shouldNotSetVolumeAboveMax() { //Тест что громкость не превысит максимум
         Radio volume = new Radio();
 
-        volume.currentVolume = 50;
         volume.setCurrentVolume(120);
 
-        int expected = 50;
+        int expected = 0;
         int actual = volume.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -32,10 +31,9 @@ public class RadioTest {
     public void shouldNotSetVolumeBelowMin() { //Тест что громкость не станет ниже минимума
         Radio volume = new Radio();
 
-        volume.currentVolume = 50;
         volume.setCurrentVolume(-10);
 
-        int expected = 50;
+        int expected = 0;
         int actual = volume.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -91,86 +89,84 @@ public class RadioTest {
 
     @Test
     public void getAndSetCurrentStation() { //Тест что показывает текущую станцию и что её можно задать
-        Radio volume = new Radio();
+        Radio station = new Radio();
 
-        volume.setCurrentStation(7);
+        station.setCurrentStation(7);
 
         int expected = 7;
-        int actual = volume.getCurrentStation();
+        int actual = station.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotSetStationAboveMax() { //Тест что станция выше максимума выбрать нельзя
-        Radio volume = new Radio();
+        Radio station = new Radio();
 
-        volume.currentStation = 7;
-        volume.setCurrentStation(15);
+        station.setCurrentStation(15);
 
-        int expected = 7;
-        int actual = volume.getCurrentStation();
+        int expected = 0;
+        int actual = station.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotSetStationBelowMin() { //Тест что станция ниже минимума выбрать нельзя
-        Radio volume = new Radio();
+        Radio station = new Radio();
 
-        volume.currentStation = 5;
-        volume.setCurrentStation(-10);
+        station.setCurrentStation(-10);
 
-        int expected = 5;
-        int actual = volume.getCurrentStation();
+        int expected = 0;
+        int actual = station.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNextStation() { //Тест переключения на следующую станцию
-        Radio radio = new Radio();
+        Radio station = new Radio();
 
-        radio.setCurrentStation(7);
+        station.setCurrentStation(7);
 
         int expected = 8;
-        int actual = radio.nextStation();
+        int actual = station.nextStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNextStationAfterLost() { //Тест переключения на первую станцию после последней
-        Radio radio = new Radio();
+        Radio station = new Radio();
 
-        radio.setCurrentStation(9);
+        station.setCurrentStation(9);
 
         int expected = 1;
-        int actual = radio.nextStation();
+        int actual = station.nextStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldPrevStation() { //Тест переключения на предыдущую станцию
-        Radio radio = new Radio();
+        Radio station = new Radio();
 
-        radio.setCurrentStation(5);
+        station.setCurrentStation(5);
 
         int expected = 4;
-        int actual = radio.prevStation();
+        int actual = station.prevStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldPrevStationBeforeFirst() { //Тест переключения на предыдущую станцию перед первой
-        Radio radio = new Radio();
+        Radio station = new Radio();
 
-        radio.setCurrentStation(1);
+        station.setCurrentStation(1);
 
         int expected = 9;
-        int actual = radio.prevStation();
+        int actual = station.prevStation();
 
         Assertions.assertEquals(expected, actual);
     }
