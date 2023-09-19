@@ -51,7 +51,7 @@ public class Radio {
 
     public int nextStation() { //переключение на одну радио-станцию вперед
         if (currentStation == 9) {
-            currentStation = 1;
+            currentStation = 0;
         } else {
             currentStation = currentStation + 1;
         }
@@ -59,7 +59,7 @@ public class Radio {
     }
 
     public int prevStation() { //переключение на одну радио-станцию назад
-        if (currentStation == 1) {
+        if (currentStation == 0) {
             currentStation = 9;
         } else {
             currentStation = currentStation - 1;

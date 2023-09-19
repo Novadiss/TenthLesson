@@ -141,7 +141,7 @@ public class RadioTest {
 
         station.setCurrentStation(9);
 
-        int expected = 1;
+        int expected = 0;
         int actual = station.nextStation();
 
         Assertions.assertEquals(expected, actual);
@@ -163,7 +163,7 @@ public class RadioTest {
     public void shouldPrevStationBeforeFirst() { //Тест переключения на предыдущую станцию перед первой
         Radio station = new Radio();
 
-        station.setCurrentStation(1);
+        station.setCurrentStation(0);
 
         int expected = 9;
         int actual = station.prevStation();
