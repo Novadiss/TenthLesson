@@ -148,6 +148,18 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldNextStationAfterLostWithSetSize() { //Тест переключения на первую станцию после последней задав количество станций
+        Radio station = new Radio(122);
+
+        station.setCurrentStation(121);
+
+        int expected = 0;
+        int actual = station.nextStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldPrevStation() { //Тест переключения на предыдущую станцию
         Radio station = new Radio();
 
@@ -169,5 +181,27 @@ public class RadioTest {
         int actual = station.prevStation();
 
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldPrevStationBeforeFirstWithSetSize() { //Тест переключения на предыдущую станцию перед первой после задания кол-ва станций
+        Radio station = new Radio(34);
+
+        station.setCurrentStation(0);
+
+        int expected = 33;
+        int actual = station.prevStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldLastStationAfterSetSize(){ //Тест на проверку диапазона станций после задания их количества
+        Radio station = new Radio(155);
+
+        Assertions.assertEquals(0, station.getFirstStation());
+        Assertions.assertEquals(154, station.getLastStation());
+        Assertions.assertEquals(0, station.getCurrentStation());
+
     }
 }
