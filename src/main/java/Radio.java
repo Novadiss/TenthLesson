@@ -8,11 +8,12 @@ public class Radio {
     private int lastStation = 9;
     private int currentStation = firstStation;
 
-    public Radio(){
+    public Radio() {
 
     }
-    public Radio(int size){
-        this.lastStation = firstStation -1 + size;
+
+    public Radio(int size) {
+        this.lastStation = firstStation - 1 + size;
     }
 
 
@@ -34,11 +35,11 @@ public class Radio {
         return currentStation;
     }
 
-    public int getFirstStation(){ //выяснение самой первой радио-станции
+    public int getFirstStation() { //выяснение самой первой радио-станции
         return firstStation;
     }
 
-    public int getLastStation(){ //выяснение последней радио-станции
+    public int getLastStation() { //выяснение последней радио-станции
         return lastStation;
     }
 

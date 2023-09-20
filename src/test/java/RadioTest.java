@@ -196,7 +196,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldLastStationAfterSetSize(){ //Тест на проверку диапазона станций после задания их количества
+    public void shouldLastStationAfterSetSize() { //Тест на проверку диапазона станций после задания их количества
         Radio station = new Radio(155);
 
         Assertions.assertEquals(0, station.getFirstStation());
