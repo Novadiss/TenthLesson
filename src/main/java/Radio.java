@@ -1,3 +1,11 @@
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radio {
 
     private int minVolume = 0;
@@ -8,17 +16,8 @@ public class Radio {
     private int lastStation = 9;
     private int currentStation = firstStation;
 
-    public Radio() {
-
-    }
-
     public Radio(int size) {
         this.lastStation = firstStation - 1 + size;
-    }
-
-
-    public int getCurrentVolume() { //выяснение текущей громкости
-        return currentVolume;
     }
 
     public void setCurrentVolume(int newCurrentVolume) { //установка громкости и ограничение диапазона возможной громкости
@@ -29,18 +28,6 @@ public class Radio {
             return;
         }
         currentVolume = newCurrentVolume;
-    }
-
-    public int getCurrentStation() { //выяснение текущей радио-станции
-        return currentStation;
-    }
-
-    public int getFirstStation() { //выяснение самой первой радио-станции
-        return firstStation;
-    }
-
-    public int getLastStation() { //выяснение последней радио-станции
-        return lastStation;
     }
 
     public void setCurrentStation(int newCurrentStation) { //установка станции и ограничение диапазона радио-станций

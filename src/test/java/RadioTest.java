@@ -17,7 +17,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetVolumeAboveMax() { //Тест что громкость не превысит максимум
-        Radio volume = new Radio();
+         Radio volume = new Radio();
 
         volume.setCurrentVolume(120);
 
